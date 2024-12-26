@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naara e takbeer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .quiz-container {
+      max-width: 400px;
+      width: 90%;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .quiz-header h1 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .question {
+      margin-bottom: 20px;
+    }
+
+    .question h3 {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .input-box {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <div class="quiz-header">
+      <h1>28/12</h1>
+    </div>
+
+    <div class="question">
+      <h3>Enter the time(Enter in 24 hours XXXX format i.e: if it is 3.30 pm the enter 1530hrs)</h3>
+      <input type="text" id="answer" class="input-box" placeholder="Type your answer here">
+    </div>
+
+    <button class="submit-btn" onclick="checkAnswer()">Submit</button>
+    <p id="result" style="margin-top: 20px; font-size: 16px; color: #333;"></p>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const answer = document.getElementById('answer').value.trim().toLowerCase();
+      const result = document.getElementById('result');
+      
+      if (answer === '2200hrs') {
+        result.textContent = "The flag is LNM{LiveLongMafias}";
+        result.style.color = 'green';
+      } else {
+        result.textContent = "❌ Incorrect. Try again!";
+        result.style.color = 'red';
+      }
+    }
+  </script>
+</body>
+</html>
